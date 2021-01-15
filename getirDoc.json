@@ -1,0 +1,76 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Getir Challenge API documentation",
+    "version": "1.0.0",
+    "title": "Getir Challenge",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "st.eloghosa@gmail.com"
+    }
+  },
+  "host": "",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "record",
+      "description": "Everything about records"
+    }
+  ],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/records": {
+      "post": {
+        "tags": ["record"],
+        "summary": "Fetch records",
+        "description": "Fetch records using this filtering options: startDate, endDate, minCount and maxCount",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Records to be filtered",
+            "required": true,
+            "type": "object",
+            "schema": {
+              "$ref": "#/definitions/payload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{ code: 0, message: 'Success', records: [] }"
+          },
+          "400": {
+            "description": "{ code: 1, msg: 'startDate must be a valid date' or 'minCount must be number' }"
+          },
+          "500": {
+            "description": "{ code: 1, message: 'Failed to fetch records ' }"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "payload": {
+      "required": ["startDate", "endDate", "minCount", "maxCount"],
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "minCount": {
+          "type": "number"
+        },
+        "maxCount": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
