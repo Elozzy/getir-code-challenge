@@ -19,6 +19,6 @@ exports.getRecordDetails = catchAsyncError(async (req, res, next) => {
     });
   } catch (error) {
     const { message } = error;
-    return recordResponseFormat({ res, statusCode: 500, message });
+    return recordResponseFormat({ res, statusCode: 400, message });
   }
 });

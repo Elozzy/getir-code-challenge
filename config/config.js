@@ -1,13 +1,21 @@
 const mongoose = require("mongoose");
-mongoose.connect(process.env.DATABASE_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+const { DATABASE_URL, TEST_DATABASE_URL, NODE_ENV } = process.env;
+const env = NODE_ENV || "development";
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error"));
-db.once("open", () => {
-  console.log("we are connected to the database");
-});
+const config = {
+  development: DATABASE_URL,
+  test: TEST_DATABASE_URL
+};
 
-module.exports = mongoose;
+const connectDB = NODE_ENV === "test" ? config.test : config.development;
+
+mongoose.connect(
+  connectDB,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  },
+  () => console.log("we are connected to the database")
+);
+
+module.exports = connectDB;
