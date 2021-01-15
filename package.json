@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test mocha --recursive --exit 'tests'",
+    "test:coverage": "NODE_ENV=test nyc --reporter=html --reporter=text npm run test"
   },
   "author": "Eloghosa",
   "license": "ISC",
@@ -23,7 +24,9 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "coveralls": "^3.1.0",
     "mocha": "^8.2.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "nyc": "^15.1.0"
   }
 }

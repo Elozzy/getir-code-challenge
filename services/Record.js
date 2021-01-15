@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const { connection } = require('mongoose');
 
 class Record {
-  
+
   /**
    * @description get all records
    * @param {*} startDate
@@ -11,7 +11,7 @@ class Record {
    */
 
   static async getRecords({ startDate, endDate, maxCount, minCount }) {
-    const recordData = await mongoose.connection.db.collection("records");
+    const recordData = await connection.db.collection("records");
     const projectRecord = {
       $project: {
         _id: false,
