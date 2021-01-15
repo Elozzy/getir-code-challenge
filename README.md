@@ -2,9 +2,9 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/Elozzy/getir-code-challenge/badge.svg?branch=main)](https://coveralls.io/github/Elozzy/getir-code-challenge?branch=main)
 
-# Introduction
+# About
 
-The purpose of this challenge is to create a RESTful API with a single endpoint that fetches the data in the provided MongoDB collection and return the results in the requested format.
+A RESTful API that fetches data with a given set of perimeters from MongoDB
 
 ## Link to Hosted App
 
