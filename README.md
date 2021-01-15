@@ -1,5 +1,5 @@
 # getir-code-challenge
-
+[![Build Status](https://travis-ci.org/Elozzy/getir-code-challenge.svg?branch=main)](https://travis-ci.org/Elozzy/getir-code-challenge)
 [![Coverage Status](https://coveralls.io/repos/github/Elozzy/getir-code-challenge/badge.svg?branch=main)](https://coveralls.io/github/Elozzy/getir-code-challenge?branch=main)
 
 # About
@@ -8,11 +8,11 @@ A RESTful API that fetches data with a given set of perimeters from MongoDB
 
 ## Link to Hosted App
 
-- [API link]
+- [API link](http://safe-sierra-84083.herokuapp.com/api/v1/records)
 
 ## Link to Swagger Doc
 
-- [Swaager Doc link]
+- [Swaager Doc link](https://safe-sierra-84083.herokuapp.com/api-docs/)
 
 ## Tech Stack Used
 
