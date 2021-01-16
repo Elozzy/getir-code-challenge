@@ -1,5 +1,4 @@
 # getir-code-challenge
-
 [![Build Status](https://travis-ci.org/Elozzy/getir-code-challenge.svg?branch=main)](https://travis-ci.org/Elozzy/getir-code-challenge)
 [![Coverage Status](https://coveralls.io/repos/github/Elozzy/getir-code-challenge/badge.svg)](https://coveralls.io/github/Elozzy/getir-code-challenge)
 
