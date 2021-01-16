@@ -7,7 +7,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "NODE_ENV=test mocha --recursive --exit 'tests'",
-    "test:coverage": "NODE_ENV=test nyc --reporter=html --reporter=text npm run test"
+    "test:coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Eloghosa",
   "license": "ISC",
