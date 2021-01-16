@@ -1,7 +1,7 @@
 const Record = require("../services/Record");
 const catchAsyncError = require("../middleware/catchAsyncError");
 const { recordValidation } = require("../validation/RecordValidation");
-const recordResponseFormat = require("../middleware/format");
+const recordResponseFormat = require("../utils/format");
 
 /**
  * @route POST v1/api/records
@@ -10,7 +10,13 @@ const recordResponseFormat = require("../middleware/format");
  */
 exports.getRecordDetails = catchAsyncError(async (req, res, next) => {
   try {
-    const validatedData = await recordValidation(req.body);
+    const { startDate, endDate, minCount, maxCount } = req.body;
+    const validatedData = await recordValidation({
+      startDate,
+      endDate,
+      minCount,
+      maxCount
+    });
     const newRecords = await Record.getRecords(validatedData);
     return recordResponseFormat({
       res,
