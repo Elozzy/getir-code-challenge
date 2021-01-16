@@ -9,7 +9,6 @@
       "email": "st.eloghosa@gmail.com"
     }
   },
-  "host": "http://safe-sierra-84083.herokuapp.com",
   "basePath": "/api/v1",
   "tags": [
     {
